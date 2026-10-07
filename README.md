@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # JanSetu Digital Citizen Services & e-District Portal
 
 A complete, modern citizen service portal supporting instant application, verification, payment, and digital certificate downloading.
@@ -84,3 +85,7 @@ node server.js
 Visit: **http://127.0.0.1:3000/**
 
 Both servers serve all frontend files, images (`/images/...`), and mock REST API endpoints (`/api/health`, `/api/applications`, `/api/certificates/:id`).
+=======
+# jansetu-seva
+AI Agent for Government Certificate Services
+>>>>>>> a1eccf6a6aafd9565d3ec380b10bf99440b281b7
