@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>JanSetu – Citizen Digital Services & e-District Portal</title>
+  <meta name="description" content="Official citizen portal for instant application and issuance of Caste, Birth, and Income certificates at minimum government statutory fees via UPI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SVG Icon Library -->
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+    <symbol id="i-speaker" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></symbol>
+    <symbol id="i-credit-card" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-emblem" aria-hidden="true">
+          <svg class="icon"><use href="#i-award"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="brandTitle">JanSetu Seva</strong>
+          <small data-i18n="brandSubtitle">National e-District Portal</small>
+        </div>
+      </div>
+
+      <div class="nav-caption" data-i18n="navServices">Services Navigation</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-view="overview">
+          <svg class="icon"><use href="#i-home"/></svg>
+          <span data-i18n="navOverview">Overview</span>
+        </button>
+        <button class="nav-item" data-view="applications">
+          <svg class="icon"><use href="#i-file"/></svg>
+          <span data-i18n="navApplications">My Applications</span>
+          <span class="nav-count" id="navAppCount">01</span>
+        </button>
+        <button class="nav-item" data-view="documents">
+          <svg class="icon"><use href="#i-shield"/></svg>
+          <span data-i18n="navDocuments">Document Vault</span>
+        </button>
+        <button class="nav-item" data-view="activity">
+          <svg class="icon"><use href="#i-clock"/></svg>
+          <span data-i18n="navActivity">Audit & Consent</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+
+      <!-- Citizen Account & Logout in Sidebar -->
+      <div class="sidebar-user" id="sidebarUserSection">
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-avatar" id="sidebarUserAvatar">AS</div>
+          <div style="overflow:hidden">
+            <span class="sidebar-user-name" id="sidebarUserName">Ananya Sharma</span>
+            <small style="display:block;font-size:9px;color:#a0cfb5" data-i18n="userRole">Verified Citizen</small>
+          </div>
+        </div>
+        <button class="sidebar-logout-btn" id="sidebarLogoutBtn" title="Log Out" aria-label="Log Out">
+          <svg class="icon"><use href="#i-logout"/></svg>
+        </button>
+      </div>
+
+      <!-- Government Cost & Official UPI ID Box -->
+      <div class="upi-info-card">
+        <div class="upi-info-card-header">
+          <svg class="icon" style="width:14px;height:14px"><use href="#i-credit-card"/></svg>
+          <span data-i18n="govFeeCardTitle">Govt Fee Receiver</span>
+        </div>
+        <p style="font-size:10px;color:#a9c5b6;margin-top:4px" data-i18n="govFeeCardSubtitle">Statutory processing fee via UPI</p>
+        <code>7501468140-4@ybl</code>
+      </div>
+
+      <button class="sidebar-help" id="openChatSide">
+        <div class="help-icon">
+          <svg class="icon"><use href="#i-chat"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="helpTitle">Need Assistance?</strong>
+          <small data-i18n="helpSubtitle">Ask Citizen AI Agent</small>
+        </div>
+      </button>
+    </aside>
+
+    <!-- Main Container -->
+    <div class="main">
+      
+      <!-- Topbar with Language Selection and Actions -->
+      <header class="topbar">
+        <div class="crumb">
+          <span data-i18n="brandTitle">JanSetu</span> / <strong id="crumbLabel" data-i18n="navOverview">Overview</strong>
+        </div>
+
+        <div class="top-actions">
+          <div class="secure-badge">
+            <svg class="icon"><use href="#i-lock"/></svg>
+            <span data-i18n="secureBadge">Govt Verified Portal</span>
+          </div>
+
+          <!-- Language Selector -->
+          <div class="lang-select-wrap">
+            <select class="lang-select" id="langSelect" aria-label="Select Language">
+              <option value="en">🌐 English</option>
+              <option value="hi">🌐 हिन्दी (Hindi)</option>
+              <option value="hn">🌐 Hinglish</option>
+              <option value="bn">🌐 বাংলা (Bengali)</option>
+              <option value="mr">🌐 मराठी (Marathi)</option>
+            </select>
+          </div>
+
+          <button class="theme-toggle-btn" id="themeToggle" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+            <svg class="icon" id="themeIcon"><use href="#i-shield"/></svg>
+          </button>
+
+          <!-- Authentication & Profile Controls -->
+          <div class="auth-section" id="authSection">
+            <div class="user-profile-wrap" id="userProfileWrap">
+              <button class="avatar-badge" id="userMenuBtn" aria-haspopup="true" aria-expanded="false" title="Account Menu">
+                <div class="avatar-icon" id="userAvatarIcon">AS</div>
+                <span id="userNameBadge">Ananya S.</span>
+                <svg class="icon chevron-icon"><use href="#i-arrow"/></svg>
+              </button>
+              
+              <!-- Dropdown Menu -->
+              <div class="user-dropdown" id="userDropdown">
+                <div class="dropdown-header">
+                  <div class="avatar-icon lg" id="dropdownAvatarIcon">AS</div>
+                  <div style="overflow:hidden">
+                    <strong id="dropdownUserName">Ananya Sharma</strong>
+                    <small id="dropdownUserRole" data-i18n="userRole">Verified Citizen · e-District</small>
+                    <div id="dropdownFamilyInfo" style="font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+                  </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" data-view-link="applications">
+                  <svg class="icon"><use href="#i-file"/></svg>
+                  <span data-i18n="navApplications">My Applications</span>
+                </button>
+                <button class="dropdown-item" data-view-link="documents">
+                  <svg class="icon"><use href="#i-shield"/></svg>
+                  <span data-i18n="navDocuments">Document Vault</span>
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item logout-action" id="dropdownLogoutBtn">
+                  <svg class="icon"><use href="#i-logout"/></svg>
+                  <span data-i18n="logoutBtn">Log Out</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick One-Click Logout in Topbar -->
+            <button class="quiet-btn logout-direct-btn" id="topbarLogoutBtn" title="Log Out" aria-label="Log Out">
+              <svg class="icon"><use href="#i-logout"/></svg>
+              <span data-i18n="logoutBtn">Log Out</span>
+            </button>
+
+            <!-- One-Click Login Button when Logged Out -->
+            <button class="primary-btn login-direct-btn" id="topbarLoginBtn" style="display:none">
+              <svg class="icon"><use href="#i-login"/></svg>
+              <span data-i18n="loginBtn">Citizen Login</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE: OVERVIEW (Default View) -->
+      <div class="page page-section active" id="view-overview">
+        
+        <!-- Hero Banner -->
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="hero-tag">
+              <svg class="icon"><use href="#i-shield"/></svg>
+              <span data-i18n="heroBadge">e-District Digital Mission</span>
+            </div>
+            <h2 data-i18n="heroTitle">Instant Citizen Certificates at Minimum Government Cost</h2>
+            <p data-i18n="heroSubtitle">Apply for verified Caste, Birth, and Income certificates online. Pay nominal statutory government fees (₹25 - ₹30) safely via UPI and download your issued certificate instantly from the portal.</p>
+            <div class="hero-actions">
+              <button class="primary-btn hero-btn-primary" id="heroStart">
+                <svg class="icon"><use href="#i-file"/></svg>
+                <span data-i18n="heroBtnApply">Apply for Certificate</span>
+              </button>
+              <button class="secondary-btn hero-btn-ghost" data-view-link="applications">
+                <svg class="icon"><use href="#i-download"/></svg>
+                <span data-i18n="heroBtnTrack">Track & Download</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats Grid -->
+        <section class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon green"><svg class="icon"><use href="#i-file"/></svg></div>
+            <div>
+              <div class="stat-value" id="statActive">01</div>
+              <div class="stat-label" data-i18n="statActive">Active Applications</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><svg class="icon"><use href="#i-credit-card"/></svg></div>
+            <div>
+              <div class="stat-value">₹25 - ₹30</div>
+              <div class="stat-label" data-i18n="statMinFee">Minimum Govt Cost</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue"><svg class="icon"><use href="#i-shield"/></svg></div>
+            <div>
+              <div class="stat-value" id="statConsents">04</div>
+              <div class="stat-label" data-i18n="statConsents">Verified Consents</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><svg class="icon"><use href="#i-award"/></svg></div>
+            <div>
+              <div class="stat-value">Instant</div>
+              <div class="stat-label" data-i18n="statIssueTime">Digital Certificate Issuance</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CORE CERTIFICATE SERVICES PANELS (Caste, Birth, Income with related images) -->
+        <section class="services-section">
+          <div class="section-head">
+            <div>
+              <h2 data-i18n="servicesHeadTitle">Select Certificate to Apply</h2>
+              <p data-i18n="servicesHeadSubtitle">View authentic certificate previews, requirements, and minimum government statutory costs</p>
+            </div>
+          </div>
+
+          <div class="service-grid">
+            
+            <!-- Panel 1: Caste Certificate -->
+            <article class="service-card" id="card-caste">
+              <div class="service-image-wrap" data-preview-img="images/caste_certificate.jpeg" data-preview-title="Caste Certificate (जाति प्रमाण पत्र)">
+                <img src="images/caste_certificate.jpeg" alt="Caste Certificate Official Specimen" loading="lazy">
+                <div class="preview-indicator">
+                  <svg class="icon"><use href="#i-eye"/></svg>
+                  <span data-i18n="previewSpecimen">View Specimen</span>
+                </div>
+                <div class="service-fee-badge">
+                  <span data-i18n="govtFeeLabel">Govt Fee:</span> ₹30
+                </div>
+                <div class="service-image-overlay">
+                  <span data-i18n="casteCertTag">SC / ST / OBC / EWS Category</span>
+                </div>
+              </div>
+
+              <div class="service-body">
+                <div class="service-title-row">
+                  <h3 class="service-title" data-i18n="casteCertTitle">Caste Certificate</h3>
+                  <p class="service-subtitle" data-i18n="casteCertSub">जाति प्रमाण पत्र · Official State Record</p>
+                </div>
+
+                <div class="service-specs">
+                  <div class="service-spec-item">
+                    <span data-i18n="statutoryFee">Statutory Fee</span>
+                    <strong>₹30 (via UPI)</strong>
+                  </div>
+                  <div class="service-spec-item">
+                    <span data-i18n="validity">Validity</span>
+                    <strong data-i18n="lifetimeValidity">Lifetime</strong>
+                  </div>
+                </div>
+
+                <ul class="service-doc-list">
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="casteDoc1">Aadhaar Card / Identity Proof</span>
+                  </li>
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="casteDoc2">Address Proof (Ration / Voter ID)</span>
+                  </li>
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="casteDoc3">Caste Proof / Affidavit / Record</span>
+                  </li>
+                </ul>
+
+                <div class="service-card-foot">
+                  <button class="primary-btn" data-apply="Caste certificate">
+                    <svg class="icon"><use href="#i-file"/></svg>
+                    <span data-i18n="applyNowBtn">Apply Now</span>
+                  </button>
+                  <button class="secondary-btn" data-preview-img="images/caste_certificate.jpeg" data-preview-title="Caste Certificate (जाति प्रमाण पत्र)">
+                    <svg class="icon"><use href="#i-eye"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Panel 2: Birth Certificate -->
+            <article class="service-card" id="card-birth">
+              <div class="service-image-wrap" data-preview-img="images/birth_certificate.jpeg" data-preview-title="Birth Certificate (जन्म प्रमाण पत्र)">
+                <img src="images/birth_certificate.jpeg" alt="Birth Certificate Official Specimen" loading="lazy">
+                <div class="preview-indicator">
+                  <svg class="icon"><use href="#i-eye"/></svg>
+                  <span data-i18n="previewSpecimen">View Specimen</span>
+                </div>
+                <div class="service-fee-badge">
+                  <span data-i18n="govtFeeLabel">Govt Fee:</span> ₹25
+                </div>
+                <div class="service-image-overlay">
+                  <span data-i18n="birthCertTag">Municipal / Registrar of Births</span>
+                </div>
+              </div>
+
+              <div class="service-body">
+                <div class="service-title-row">
+                  <h3 class="service-title" data-i18n="birthCertTitle">Birth Certificate</h3>
+                  <p class="service-subtitle" data-i18n="birthCertSub">जन्म प्रमाण पत्र · Vital Statistics Record</p>
+                </div>
+
+                <div class="service-specs">
+                  <div class="service-spec-item">
+                    <span data-i18n="statutoryFee">Statutory Fee</span>
+                    <strong>₹25 (via UPI)</strong>
+                  </div>
+                  <div class="service-spec-item">
+                    <span data-i18n="validity">Validity</span>
+                    <strong data-i18n="lifetimeValidity">Lifetime</strong>
+                  </div>
+                </div>
+
+                <ul class="service-doc-list">
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="birthDoc1">Hospital Birth Slip / Discharge Card</span>
+                  </li>
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="birthDoc2">Parents' Aadhaar Card / ID</span>
+                  </li>
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="birthDoc3">Permanent Address Proof</span>
+                  </li>
+                </ul>
+
+                <div class="service-card-foot">
+                  <button class="primary-btn" data-apply="Birth certificate">
+                    <svg class="icon"><use href="#i-file"/></svg>
+                    <span data-i18n="applyNowBtn">Apply Now</span>
+                  </button>
+                  <button class="secondary-btn" data-preview-img="images/birth_certificate.jpeg" data-preview-title="Birth Certificate (जन्म प्रमाण पत्र)">
+                    <svg class="icon"><use href="#i-eye"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Panel 3: Income Certificate -->
+            <article class="service-card" id="card-income">
+              <div class="service-image-wrap" data-preview-img="images/income_certificate.jpeg" data-preview-title="Income Certificate (आय प्रमाण पत्र)">
+                <img src="images/income_certificate.jpeg" alt="Income Certificate Official Specimen" loading="lazy">
+                <div class="preview-indicator">
+                  <svg class="icon"><use href="#i-eye"/></svg>
+                  <span data-i18n="previewSpecimen">View Specimen</span>
+                </div>
+                <div class="service-fee-badge">
+                  <span data-i18n="govtFeeLabel">Govt Fee:</span> ₹30
+                </div>
+                <div class="service-image-overlay">
+                  <span data-i18n="incomeCertTag">Revenue Dept / Tehsildar Office</span>
+                </div>
+              </div>
+
+              <div class="service-body">
+                <div class="service-title-row">
+                  <h3 class="service-title" data-i18n="incomeCertTitle">Income Certificate</h3>
+                  <p class="service-subtitle" data-i18n="incomeCertSub">आय प्रमाण पत्र · Revenue & Scholarship Proof</p>
+                </div>
+
+                <div class="service-specs">
+                  <div class="service-spec-item">
+                    <span data-i18n="statutoryFee">Statutory Fee</span>
+                    <strong>₹30 (via UPI)</strong>
+                  </div>
+                  <div class="service-spec-item">
+                    <span data-i18n="validity">Validity</span>
+                    <strong data-i18n="annualValidity">1 Financial Year</strong>
+                  </div>
+                </div>
+
+                <ul class="service-doc-list">
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="incomeDoc1">Salary Slip / Form 16 / Patwari Report</span>
+                  </li>
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="incomeDoc2">Aadhaar Card / ID Proof</span>
+                  </li>
+                  <li class="service-doc-item">
+                    <svg class="icon"><use href="#i-check"/></svg>
+                    <span data-i18n="incomeDoc3">Bank Statement / Self Declaration</span>
+                  </li>
+                </ul>
+
+                <div class="service-card-foot">
+                  <button class="primary-btn" data-apply="Income certificate">
+                    <svg class="icon"><use href="#i-file"/></svg>
+                    <span data-i18n="applyNowBtn">Apply Now</span>
+                  </button>
+                  <button class="secondary-btn" data-preview-img="images/income_certificate.jpeg" data-preview-title="Income Certificate (आय प्रमाण पत्र)">
+                    <svg class="icon"><use href="#i-eye"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Active Journey / Recent Progress Tracking -->
+        <section class="content-grid">
+          
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <h3 class="panel-title" data-i18n="featuredTitle">Active Certificate Application</h3>
+                <p class="panel-subtitle" data-i18n="featuredSubtitle">Live e-District processing tracking and download access</p>
+              </div>
+              <button class="secondary-btn" id="refreshStatuses">
+                <svg class="icon"><use href="#i-refresh"/></svg>
+                <span data-i18n="refreshBtn">Sync Status</span>
+              </button>
+            </div>
+
+            <div id="featuredApplication">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+
+          <!-- Quick Activity & Assistance Sidebar Box -->
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <h3 class="panel-title" data-i18n="quickActivityTitle">Recent Actions</h3>
+                <p class="panel-subtitle" data-i18n="quickActivitySub">Cryptographic audit log</p>
+              </div>
+              <button class="quiet-btn" data-view-link="activity" data-i18n="viewAll">View all</button>
+            </div>
+            <div class="activity-list" id="recentActivity">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- PAGE: MY APPLICATIONS (Download & Track View) -->
+      <div class="page page-section" id="view-applications">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow" data-i18n="navApplications">My Applications</div>
+            <h1 data-i18n="appsPageTitle">Applied & Issued Certificates</h1>
+            <p data-i18n="appsPageSubtitle">Track status, view government payment receipts, and download officially signed certificates</p>
+          </div>
+          <button class="primary-btn" id="newApplication">
+            <svg class="icon"><use href="#i-file"/></svg>
+            <span data-i18n="newApplicationBtn">+ New Application</span>
+          </button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th data-i18n="thService">Certificate Service</th>
+                <th data-i18n="thAppId">Reference ID</th>
+                <th data-i18n="thApplicant">Applicant Name</th>
+                <th data-i18n="thFee">Govt Fee Paid</th>
+                <th data-i18n="thStatus">Status</th>
+                <th data-i18n="thActions">Issued Certificate</th>
+              </tr>
+            </thead>
+            <tbody id="applicationRows">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PAGE: DOCUMENT VAULT -->
+      <div class="page page-section" id="view-documents">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow" data-i18n="navDocuments">Document Vault</div>
+            <h1 data-i18n="vaultTitle">Citizen Document Checklist & Samples</h1>
+            <p data-i18n="vaultSubtitle">Acceptable identity, residence, and category proofs for Caste, Birth, and Income certificates</p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <div class="panel">
+            <h3 class="panel-title" style="margin-bottom:8px">Caste Certificate Docs</h3>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:14px">Identity (Aadhaar/PAN), Residence (Ration/Voter card), Caste proof (Father's caste certificate or revenue record).</p>
+            <button class="secondary-btn" data-apply="Caste certificate" data-i18n="applyNowBtn">Apply Now</button>
+          </div>
+          <div class="panel">
+            <h3 class="panel-title" style="margin-bottom:8px">Birth Certificate Docs</h3>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:14px">Hospital birth slip, parents' Aadhaar card, parents' address proof, and doctor's discharge summary.</p>
+            <button class="secondary-btn" data-apply="Birth certificate" data-i18n="applyNowBtn">Apply Now</button>
+          </div>
+          <div class="panel">
+            <h3 class="panel-title" style="margin-bottom:8px">Income Certificate Docs</h3>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:14px">Salary slip/Form 16 or Patwari/Gram Pradhan income certificate, Aadhaar card, Bank declaration.</p>
+            <button class="secondary-btn" data-apply="Income certificate" data-i18n="applyNowBtn">Apply Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE: AUDIT & CONSENT -->
+      <div class="page page-section" id="view-activity">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow" data-i18n="navActivity">Audit & Consent</div>
+            <h1 data-i18n="auditTitle">Cryptographic Activity & Consent Trail</h1>
+            <p data-i18n="auditSubtitle">Every action and permission is chained with SHA-256 for transparency and auditability</p>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="secondary-btn" id="verifyChainBtn">
+              <svg class="icon"><use href="#i-shield"/></svg>
+              <span data-i18n="verifyChain">Verify Chain Integrity</span>
+            </button>
+            <button class="secondary-btn" id="exportAudit">
+              <svg class="icon"><use href="#i-download"/></svg>
+              <span data-i18n="exportCsv">Export CSV</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="audit-feed" id="auditFeed">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MULTI-STEP APPLICATION FLOW MODAL WITH PAYMENT GATEWAY -->
+  <div class="overlay" id="flowOverlay" role="dialog" aria-modal="true" aria-labelledby="flowModalTitle">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <h3 class="modal-title" id="flowModalTitle">Apply for Certificate</h3>
+          <div class="modal-kicker" id="flowModalSubtitle">Step-by-step citizen application journey</div>
+        </div>
+        <button class="icon-btn" id="closeFlow" aria-label="Close modal">
+          <svg class="icon"><use href="#i-close"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Progress Stepper -->
+        <div class="flow-progress" id="flowProgress"></div>
+
+        <!-- Dynamic Step Content -->
+        <div id="flowBody"></div>
+
+        <!-- Hidden input for file picking -->
+        <input class="sr-only" type="file" id="filePicker" accept=".pdf,.png,.jpg,.jpeg,.webp">
+      </div>
+
+      <div class="modal-foot">
+        <span class="foot-hint" id="flowFootHint">Review all requirements before proceeding.</span>
+        <div class="foot-actions">
+          <button class="secondary-btn" id="flowBack" style="display:none">
+            <span data-i18n="btnBack">Back</span>
+          </button>
+          <button class="primary-btn" id="flowNext">
+            <span data-i18n="btnContinue">Continue</span>
+            <svg class="icon"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFICIAL ISSUED CERTIFICATE VIEW & DOWNLOAD MODAL -->
+  <div class="overlay" id="certOverlay" role="dialog" aria-modal="true" aria-labelledby="certModalHeading">
+    <div class="modal" style="width:min(860px, 98vw)">
+      <div class="modal-head">
+        <div>
+          <h3 class="modal-title" id="certModalHeading">Issued Official Certificate</h3>
+          <div class="modal-kicker">Government Digitally Signed e-District Document</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="primary-btn" id="printCertBtn">
+            <svg class="icon"><use href="#i-printer"/></svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <button class="secondary-btn" id="downloadCertFileBtn">
+            <svg class="icon"><use href="#i-download"/></svg>
+            <span>Download</span>
+          </button>
+          <button class="icon-btn" id="closeCertModal" aria-label="Close Certificate View">
+            <svg class="icon"><use href="#i-close"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body cert-modal-body">
+        <div class="cert-document-wrapper">
+          
+          <!-- Authentic Printable Certificate Paper Layout -->
+          <div class="official-certificate" id="printableCertificate">
+            <div class="cert-watermark">GOVERNMENT OF INDIA</div>
+
+            <div class="cert-header">
+              <svg class="cert-emblem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M12 14v8M8 22h8"/>
+              </svg>
+              <h4>Government of India · State e-District Portal</h4>
+              <h3>NATIONAL MISSION MODE PROJECT · CITIZEN CERTIFICATE</h3>
+              <p>Digitally Signed & Issued under Information Technology Act, 2000</p>
+            </div>
+
+            <div class="cert-meta-row">
+              <div>
+                <strong>Certificate No:</strong> <span id="certDisplayNo">GOV/2026/IN/491028</span>
+              </div>
+              <div>
+                <strong>Application Ref:</strong> <span id="certDisplayRef">JS-20481</span>
+              </div>
+              <div>
+                <strong>Date of Issue:</strong> <span id="certDisplayDate">07/10/2026</span>
+              </div>
+            </div>
+
+            <div class="cert-title-badge">
+              <h2 id="certDisplayTitle">CERTIFICATE OF INCOME</h2>
+            </div>
+
+            <div class="cert-body-text" id="certDisplayText">
+              This is to officially certify that <b>Ananya Sharma</b>, residing at <b>Pune, Maharashtra</b>, has duly satisfied the statutory verification requirements for the issuance of this certificate.
+            </div>
+
+            <table class="cert-table" id="certDisplayTable">
+              <!-- Dynamically populated -->
+            </table>
+
+            <div class="cert-footer">
+              <div class="cert-qr-area">
+                <div class="cert-qr-thumb" id="certQrThumb">
+                  <!-- QR SVG -->
+                </div>
+                <div style="font-size:10px;color:#555">
+                  <strong>Digital Verification</strong><br>
+                  Scan QR code to verify authenticity<br>
+                  edistrict.gov.in/verify
+                </div>
+              </div>
+
+              <div class="cert-signature-area">
+                <div class="cert-digi-seal">
+                  DIGITALLY SIGNED<br>
+                  SUB-DIVISIONAL<br>
+                  MAGISTRATE (SDM)
+                </div>
+                <div style="font-size:10px;color:#333;font-weight:600">
+                  Authorized Competent Authority<br>
+                  Government of India
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE SPECIMEN LIGHTBOX MODAL -->
+  <div class="overlay" id="imagePreviewOverlay" role="dialog" aria-modal="true">
+    <div class="modal" style="width:min(720px, 94vw);background:#121815">
+      <div class="modal-head" style="background:#121815;border-color:#24322b;color:#fff">
+        <div>
+          <h3 class="modal-title" style="color:#fff" id="previewModalTitle">Official Certificate Specimen</h3>
+          <div class="modal-kicker" style="color:#8fa799">Authentic sample layout for reference</div>
+        </div>
+        <button class="icon-btn" id="closeImagePreview" style="background:#223028;color:#fff" aria-label="Close Specimen Preview">
+          <svg class="icon"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" style="padding:16px;text-align:center">
+        <img id="previewModalImage" src="" alt="Certificate Preview" style="max-width:100%;max-height:75vh;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.5)">
+      </div>
+    </div>
+  </div>
+
+  <!-- CITIZEN ASSISTANT CHAT DRAWER -->
+  <div class="chat-drawer" id="chatDrawer" role="region" aria-label="AI Citizen Assistant Chat">
+    <div class="chat-head">
+      <div class="assistant-orb">
+        <svg class="icon"><use href="#i-chat"/></svg>
+      </div>
+      <div>
+        <strong data-i18n="chatAgentTitle">JanSetu Seva Agent</strong>
+        <small id="chatStatusText" data-i18n="chatAgentStatus">Voice & Text Guidance</small>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:4px">
+        <button class="icon-btn" id="speakLast" title="Read last reply aloud" aria-label="Read Reply">
+          <svg class="icon"><use href="#i-speaker"/></svg>
+        </button>
+        <button class="icon-btn" id="closeChat" aria-label="Close Assistant">
+          <svg class="icon"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot" data-i18n="chatWelcome">
+        Namaste! I am your JanSetu Citizen Service Assistant. I can help you apply for Caste, Birth, and Income certificates at minimum government cost (₹25 - ₹30 via UPI: 7501468140-4@ybl) and download your issued certificates. How may I help you today?
+      </div>
+    </div>
+
+    <div class="chat-composer">
+      <input type="text" id="chatInput" placeholder="Ask a question or speak…" aria-label="Message">
+      <button class="icon-btn" id="micButton" title="Voice Input" aria-label="Speak">
+        <svg class="icon"><use href="#i-mic"/></svg>
+      </button>
+      <button class="send-btn" id="sendChat" title="Send" aria-label="Send">
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- CITIZEN LOGIN MODAL OVERLAY -->
+  <div class="overlay" id="loginOverlay" role="dialog" aria-modal="true">
+    <div class="modal login-modal" style="max-width:440px">
+      <div class="modal-head">
+        <div>
+          <h3 class="modal-title" data-i18n="loginModalTitle">Citizen Portal Login</h3>
+          <p class="modal-subtitle" data-i18n="loginModalSubtitle">Sign in with Mobile or Aadhaar to manage and apply for certificates</p>
+        </div>
+        <button class="icon-btn" id="closeLoginModal" aria-label="Close modal">
+          <svg class="icon"><use href="#i-close"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body" style="padding:22px">
+        <form id="loginForm">
+          <div class="field-wrap" style="margin-bottom:14px">
+            <label class="field-label" data-i18n="loginMobileLabel">Mobile Number / Aadhaar</label>
+            <input type="text" class="field-input" id="loginMobileInput" placeholder="Enter 10-digit mobile or 12-digit Aadhaar" value="9876543210" required>
+          </div>
+          <div class="field-wrap" style="margin-bottom:14px">
+            <label class="field-label" data-i18n="loginNameLabel">Full Name (as per Aadhaar)</label>
+            <input type="text" class="field-input" id="loginNameInput" placeholder="Citizen Full Name" value="Ananya Sharma" required>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px">
+            <div class="field-wrap">
+              <label class="field-label" data-i18n="loginFatherLabel">Father's Name</label>
+              <input type="text" class="field-input" id="loginFatherInput" placeholder="Father's Full Name" value="Rajesh Sharma">
+            </div>
+            <div class="field-wrap">
+              <label class="field-label" data-i18n="loginMotherLabel">Mother's Name</label>
+              <input type="text" class="field-input" id="loginMotherInput" placeholder="Mother's Full Name" value="Kavita Sharma">
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;margin-bottom:16px">
+            <button type="submit" class="primary-btn" id="submitLoginBtn" style="flex:1;justify-content:center">
+              <svg class="icon"><use href="#i-login"/></svg>
+              <span data-i18n="loginSubmitBtn">Sign In (OTP)</span>
+            </button>
+            <button type="button" class="secondary-btn" id="demoQuickLoginBtn" style="white-space:nowrap">
+              <span data-i18n="quickDemoLogin">Demo Citizen</span>
+            </button>
+          </div>
+
+          <div class="secure-badge" style="width:100%;justify-content:center;font-size:11px">
+            <svg class="icon"><use href="#i-lock"/></svg>
+            <span data-i18n="loginSecureNotice">Secure 256-bit SSL encrypted government authentication</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

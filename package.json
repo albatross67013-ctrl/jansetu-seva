@@ -1,0 +1,11 @@
+{
+  "name": "jansetu-citizen-service-demo",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python server.py",
+    "node": "node server.js",
+    "py": "python server.py"
+  }
+}

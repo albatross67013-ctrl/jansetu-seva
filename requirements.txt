@@ -1,0 +1,8 @@
+# JanSetu Digital Citizen Services & e-District Portal
+# ----------------------------------------------------
+# The local application server (backend.py / server.py) runs entirely using
+# Python's standard library (http.server, json, urllib, datetime, etc.).
+# No external third-party dependencies are required to run the application.
+#
+# Requirements:
+# Python >= 3.8
