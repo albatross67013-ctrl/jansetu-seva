@@ -82,7 +82,7 @@ node server.js
 ```
 
 ### Open in Browser
-Visit: **http://127.0.0.1:3000/**
+Visit: https://albatross67013-ctrl.github.io/jansetu-seva/
 
 Both servers serve all frontend files, images (`/images/...`), and mock REST API endpoints (`/api/health`, `/api/applications`, `/api/certificates/:id`).
 =======
